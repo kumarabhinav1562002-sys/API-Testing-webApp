@@ -1,0 +1,14 @@
+<div class="api-tester">
+	<div class="tabs">
+		<button [class.active]="selectedTab === 'http'" (click)="selectedTab = 'http'">HTTP</button>
+		<button [class.active]="selectedTab === 'ws'" (click)="selectedTab = 'ws'">WebSocket</button>
+		<button [class.active]="selectedTab === 'sse'" (click)="selectedTab = 'sse'">SSE</button>
+	</div>
+	<div class="tab-content">
+		<app-request-panel *ngIf="selectedTab === 'http'" [type]="'HTTP'"></app-request-panel>
+		<app-request-panel *ngIf="selectedTab === 'ws'" [type]="'WEBSOCKET'"></app-request-panel>
+		<app-request-panel *ngIf="selectedTab === 'sse'" [type]="'SSE'"></app-request-panel>
+	</div>
+	<app-connection-status></app-connection-status>
+	<app-response-panel></app-response-panel>
+</div>

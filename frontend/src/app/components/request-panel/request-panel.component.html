@@ -1,0 +1,24 @@
+<div class="request-panel">
+	<form *ngIf="type === 'HTTP'" (ngSubmit)="sendHttp()">
+		<select [(ngModel)]="httpMethod" name="method">
+			<option *ngFor="let m of httpMethods" [value]="m">{{m}}</option>
+		</select>
+		<input [(ngModel)]="httpUrl" name="url" placeholder="URL" required />
+		<textarea [(ngModel)]="httpBody" name="body" placeholder="Body (JSON)" *ngIf="httpMethod === 'POST' || httpMethod === 'PUT' || httpMethod === 'PATCH'"></textarea>
+		<button type="submit">Send</button>
+	</form>
+	<form *ngIf="type === 'WEBSOCKET'" (ngSubmit)="connectWs()">
+		<input [(ngModel)]="wsUrl" name="wsurl" placeholder="WebSocket URL" required />
+		<button type="submit">Connect</button>
+		<div *ngIf="wsConnected">
+			<input [(ngModel)]="wsMessage" name="wsmsg" placeholder="Message" />
+			<button type="button" (click)="sendWs()">Send</button>
+			<button type="button" (click)="disconnectWs()">Disconnect</button>
+		</div>
+	</form>
+	<form *ngIf="type === 'SSE'" (ngSubmit)="connectSse()">
+		<input [(ngModel)]="sseUrl" name="sseurl" placeholder="SSE URL" required />
+		<button type="submit">Connect</button>
+		<button type="button" (click)="disconnectSse()" *ngIf="sseConnected">Disconnect</button>
+	</form>
+</div>

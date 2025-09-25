@@ -1,0 +1,26 @@
+.response-panel {
+	margin-top: 24px;
+	background: #f9f9f9;
+	border-radius: 6px;
+	padding: 16px;
+}
+.response-item {
+	margin-bottom: 18px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #e0e0e0;
+}
+.meta {
+	font-size: 0.95em;
+	color: #555;
+	margin-bottom: 4px;
+	display: flex;
+	gap: 16px;
+}
+pre {
+	background: #222;
+	color: #fff;
+	padding: 10px;
+	border-radius: 4px;
+	font-size: 0.98em;
+	overflow-x: auto;
+}

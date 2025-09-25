@@ -1,0 +1,10 @@
+<div class="response-panel">
+	<div *ngFor="let res of responses" class="response-item">
+		<div class="meta">
+			<span>{{res.type}}</span>
+			<span *ngIf="res.status">Status: {{res.status}}</span>
+			<span>{{res.timestamp | date:'shortTime'}}</span>
+		</div>
+		<pre>{{res.data | json}}</pre>
+	</div>
+</div>

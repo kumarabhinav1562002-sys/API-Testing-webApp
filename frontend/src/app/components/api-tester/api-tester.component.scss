@@ -1,0 +1,28 @@
+.api-tester {
+	max-width: 800px;
+	margin: 40px auto;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+	padding: 24px;
+}
+.tabs {
+	display: flex;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+.tabs button {
+	padding: 8px 20px;
+	border: none;
+	background: #eee;
+	border-radius: 4px 4px 0 0;
+	cursor: pointer;
+	font-weight: 500;
+}
+.tabs button.active {
+	background: #1976d2;
+	color: #fff;
+}
+.tab-content {
+	padding: 16px 0;
+}
